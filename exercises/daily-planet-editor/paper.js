@@ -27,13 +27,13 @@ for (var i=0;i<enemies.length;i++){
         hasKryptonite = false;
     }
     console.log(whoWins(hasKryptonite,enemies[i]));
-}
+};
 
 function isLoisAttracted ()
 {
     // 1 is not at all attracted, 10 is "super" attracted...
     return Math.floor((Math.random()*10)+1);
-}
+};
 
 console.log(isLoisAttracted());
 
@@ -47,4 +47,7 @@ while (clarkKent){
         clarkKent=false;
         superman=true;
         console.log("Now I'm Superman!");}
-    };
+};
+
+
+// only thing i don't understand is if the var on line 23 is necessary. on testing it didn't seem necessary
