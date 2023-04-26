@@ -14,8 +14,9 @@ function createDropDown(){
         option.value = colors[i]
         dropDown.append(option)
    }
-    dropDown.addEventListener("change", function(){
-        alert("safdlksajkasdf")
+    dropDown.addEventListener("change", function(e){
+        console.dir(e.target)
+        e.target.parentElement.style.backgroundColor = e.target.value
     })
     return dropDown
 }
