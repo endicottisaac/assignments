@@ -10,3 +10,15 @@ const capitalizeAndLowercase = (word) => {
 
 capitalizeAndLowercase('hello')
 
+//Write a function that takes a string as a parameter and returns a number that is half the string's length, rounded down.
+
+const findMiddleIndex = (word) => {
+    const wordLength = word.length;
+    const halfIndex = wordLength / 2;
+    const roundedIndex = Math.floor(halfIndex);
+
+    console.log(roundedIndex);
+}
+
+findMiddleIndex('hello'); 
+
