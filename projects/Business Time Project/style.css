@@ -124,6 +124,7 @@ q {
     body {
         margin: auto 50px;
     }
+
     #homepage-img {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -134,8 +135,6 @@ q {
         grid-column: 1/3;
     }
     #birdimg {
-        max-height: 730px;
-        width: auto;
         grid-row: 1/-1;
         grid-column: 3/5;
     }
