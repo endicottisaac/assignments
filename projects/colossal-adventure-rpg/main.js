@@ -6,6 +6,7 @@ const player = {
     potion: 1
 };
 
+let timesWalked = 0;
 let enemiesKilled = 0; 
 
 //Initial messages, getting names 
@@ -13,14 +14,14 @@ let enemiesKilled = 0;
 alert(`Welcome to a simple/short rpg`)
 const playerName = prompt('What is your name?')
 alert(`Well ${playerName}... We are off to a great adventure`)
-alert(`You will need to walk forward, fight enemies, and collect quest items to beat the game.`)
+alert(`You will need to walk forward, fight enemies, and collect quest items to beat the game. Your goal is to find the key`)
 alert(`${playerName}'s starting health is: ${player.hp}hp; weapon: ${player.weapon}; inventory: ${player.inventory}; potion(s): ${player.potion}. PS potions heal for 20 health`)
 
 
 //Random number functions;
 
 const walkNumber = () => {
-    num = Math.floor(Math.random() * 3); 
+    num = Math.floor(Math.random() * 100); 
     return num 
 }
 
@@ -108,8 +109,8 @@ const fightEnemy = (enemy) => {
             enemiesKilled += 1;
             player.hp += 35;
             alert(`You have defeated the troll! You have regained some of your hp, your hp is now ${player.hp}`)
+            addQuestItem()
         } else if(player.hp < 1) {
-            alert("you are dead")
             return player.hp
 
         }
@@ -129,8 +130,8 @@ const fightEnemy = (enemy) => {
             enemiesKilled += 1;
             player.hp += 20
             alert(`You have defeated the thief! You have regained some of your hp, your hp is now ${player.hp}`)
+            addQuestItem()
         } else if(player.hp < 1){
-            alert("dead")
             return player.hp
         }
         
@@ -149,8 +150,8 @@ const fightEnemy = (enemy) => {
         enemiesKilled += 1;
         player.hp += 5
         alert(`You have defeated the goblin! You have regained some of your hp, your hp is now ${player.hp}`)
+        addPotion()
     } else if(player.hp < 1){
-        alert("dead")
         return player.hp
     }
     }
@@ -182,24 +183,86 @@ const viewInventory = () => {
 }
 
 //adding quest items after defeating monsters
-const addQuestItem = () =>{
-    
-}
+const addQuestItem = () => {
+    if(player.inventory.length < 2){
+        player.inventory.push("eye of newt")
+        alert(`You have found another item, you have found the ${player.inventory[1]}.`)
+    } else if(player.inventory.length < 3){
+        player.inventory.push("broken sword of the dead")
+        alert(`You have found another item, you have found the ${player.inventory[2]}.`)
 
+    }else if(player.inventory.length < 4){
+        player.inventory.push("fairy in a bottle")
+        alert(`You have found another item, you have found the ${player.inventory[3]}.`)
+
+    } else if(player.inventory.length < 5){
+        player.inventory.push('feather from a big bird')
+        alert(`You have found another item, you have found the ${player.inventory[4]}.`)
+
+    } else if(player.inventory.length < 6){
+        player.inventory.push('key to the prize')
+        alert(`You have found another item, you have found the ${player.inventory[5]}.`)
+
+    }
+}
+const addPotion = () =>{
+    const chanceToAdd = Math.floor(Math.random() * 4)
+    if(chanceToAdd > 1){
+        player.potion += 1
+        alert(`The goblin dropped a potion! You now have ${player.potion} potion(s)`)
+    }
+}
+//function to combine fighting, running, inventory, etc. 
 const nextAction = () => {
-    const userChoice = prompt(`Please press 'w' for walk, 'i' for inventory`)
+    const userChoice = prompt(`Please press 'w' for walk, 'i' for inventory, 'v' to view your character, or 'q' to quit the game.`)
     if(userChoice === 'w'){
-       let fightChance = walkNumber();
-       if(fightChance >= 0){
-         fightOrRun();
+        timesWalked +=1
+        let fightChance = walkNumber();
+        if(fightChance > 70){
+        fightOrRun();
        } else {
-        return 'Another step towards Victory!'
+        alert(`Another step towards victory!`)
        }
     } else if(userChoice === 'i'){
         viewInventory()
+    } else if(userChoice === 'v'){
+        alert(`${playerName}'s stats: times walk was chosen: ${timesWalked}; enemies defeated: ${enemiesKilled}; current health: ${player.hp}; items in inventory: ${player.inventory}`)
+    } else if(userChoice === 'q'){
+        const secondQuit = prompt(`Your progress will not be saved. You sure you want to quit? press q to quit, press any other letter to keep playing.`)
+        if(secondQuit === 'q'){
+            player.hp -= 10000000;
+        }
     }
 }
 
+
+//function to alert the user they have one
+const hasKey = () =>{
+    if(player.inventory[5] === 'key to the prize'){
+        alert(`You have found the key and win the game!!!, Your prize is the pride of winning`)
+        document.body.append('You have won!')
+        document.body.style.color = 'gold'
+    }
+}
+
+//function to alert the user if they have lost
+
+const isDead = () => {
+    if(player.hp < 1){
+        alert(`Wah wah waaaah... you are dead. game over. no prize for you.`)
+        document.body.append('You have lost...')
+        document.body.style.color = 'red'
+    }
+}
+
+
+//While loop to repeat until player has one or obtained the key
+while(player.hp > 0 && player.inventory.length < 6) {
+    nextAction()
+    hasKey()
+    isDead()
+
+}
 
 
 
