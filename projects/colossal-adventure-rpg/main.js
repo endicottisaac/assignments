@@ -251,7 +251,7 @@ const isDead = () => {
 }
 
 
-//While loop to repeat until player has one or obtained the key
+//While loop to repeat until player has died, player has obtained the key, or player has quit
 while(player.hp > 0 && player.inventory.length < 6) {
     nextAction()
     hasKey()
