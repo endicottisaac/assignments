@@ -27,9 +27,9 @@ const walkNumber = () => {
 
 const whichEnemy = () => {
     num = Math.floor(Math.random() * 100);
-    if(num > 79){
+    if(num > 75){
         return 'Troll'
-    } else if(num > 54) {
+    } else if(num > 30) {
         return 'Thief'
     } else {
         return 'Goblin'
@@ -84,7 +84,13 @@ const fightOrRun = () => {
     const enemy = whichEnemy();
     const userChoice = prompt(`You have run into an enemy! Would you like to fight the ${enemy}, press 'f', or press 'r' to run away?`)
     if(userChoice === 'r'){
-        runAway()
+        const runChance = Math.floor(Math.random () * 2)
+        if( runChance > 0){
+            alert(`You got away safely!`)
+        } else if(runChance < 1) {
+            alert(`You could not get away, you will have to fight the ${enemy}...`)
+            fightEnemy(enemy);
+        }
     } else if(userChoice === 'f'){
         fightEnemy(enemy);
     }
@@ -154,17 +160,6 @@ const fightEnemy = (enemy) => {
     } else if(player.hp < 1){
         return player.hp
     }
-    }
-}
-
-const runAway = () => {
-    const damageChance = Math.floor(Math.random() * 3);
-    if(damageChance > 0){
-        alert('You got away safely')
-    } else {
-        player.hp = player.hp - 10;
-        alert(`You took damage while running away, your current hp is ${player.hp}`)
-        console.log(player.hp)
     }
 }
 
