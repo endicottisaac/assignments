@@ -103,13 +103,13 @@ const fightEnemy = (enemy) => {
     if(enemy === 'Troll'){
         while (player.hp > 0 && trollHealth > 0) {
             const playerTurn = playerAttack();
-            console.log(playerTurn)
+            console.log('player damage: ' + playerTurn)
             trollHealth -= playerTurn;
-            console.log(trollHealth)
+            console.log('enemy health after attack: " ' + trollHealth)
             const trollTurn = trollAttack()
-            console.log(trollTurn)
+            console.log('enemy damage: ' + trollTurn)
             player.hp -= trollTurn
-            console.log(player.hp)
+            console.log('player health after enemy attack: ' + player.hp)
         }
         if(trollHealth < 1){
             enemiesKilled += 1;
@@ -124,13 +124,13 @@ const fightEnemy = (enemy) => {
     } else if(enemy === 'Thief'){
             while(player.hp > 0 && thiefHealth > 0) {
             const playerTurn = playerAttack();
-            console.log(playerTurn)
+            console.log('player damage: ' + playerTurn)
             thiefHealth -= playerTurn;
-            console.log(thiefHealth)
+            console.log('enemy health after attack: " ' + thiefHealth)
             const thiefTurn = thiefAttack()
-            console.log(thiefTurn)
+            console.log('enemy damage: ' + thiefTurn)
             player.hp -= thiefTurn
-            console.log(player.hp)
+            console.log('player health after enemy attack: ' + player.hp)
         }
         if(thiefHealth < 1){
             enemiesKilled += 1;
@@ -144,13 +144,13 @@ const fightEnemy = (enemy) => {
     }  else if(enemy === 'Goblin'){
         while(player.hp > 0 && goblinHealth > 0) {
         const playerTurn = playerAttack();
-        console.log(playerTurn)
+        console.log('player damage: ' + playerTurn)
         goblinHealth -= playerTurn;
-        console.log(goblinHealth)
+        console.log('enemy health after attack: " ' + goblinHealth)
         const goblinTurn = goblinAttack()
-        console.log(goblinTurn)
+        console.log('enemy damage: ' + goblinTurn)
         player.hp -= goblinTurn
-        console.log(player.hp)
+        console.log('player health after enemy attack:  ' + player.hp)
     }
     if  (goblinHealth < 1){
         enemiesKilled += 1;
