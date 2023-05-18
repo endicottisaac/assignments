@@ -231,7 +231,7 @@ const nextAction = () => {
 }
 
 
-//function to alert the user they have one
+//function to alert the user if they have one
 const hasKey = () =>{
     if(player.inventory[5] === 'key to the prize'){
         alert(`You have found the key and win the game!!!, Your prize is the pride of winning`)
