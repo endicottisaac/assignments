@@ -1,0 +1,138 @@
+body {
+    font-family: 'DotGothic16', sans-serif;
+    font-weight: bold;
+}
+
+#navBar ul {
+    margin: 0; 
+	padding: 5px; 
+	list-style-type: none; 
+	text-align: center; 
+	background-color: red; 
+    border-radius: 10px;
+}
+
+#navBar ul li {  
+	display: inline; 
+} 
+
+#navBar ul li a { 
+	text-decoration: none; 
+	padding: .2em 1em; 
+	color: #fff; 
+	 
+} 
+
+#navBar ul li a:visited { 
+        color: #fff;
+} 
+#navBar ul li a:hover { 
+    color: blue;
+} 
+
+.mainHeader {
+    background-color: rgb(119, 152, 235);
+    padding: 30px 30px;
+    border-radius: 10px;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.initialList {
+    background-color: burlywood;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.pestDescriptions {
+    list-style-type: none;
+}
+.pestDescriptions img {
+    width: 5em;
+}
+
+#pestContainer {
+    background-color: rgb(109, 173, 109);
+    border-radius: 10px;
+}
+
+#submitButton {
+    padding: 10px;
+    display: block;
+    margin-left: 50px;
+    border-radius: 15px;
+}
+
+#totalCost {
+    background-color: rgb(119, 152, 235);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: red;
+    border-radius: 10px;
+}
+
+
+@media screen and (min-width: 1300px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 20px;
+        font-size: 2em;
+    }
+    footer {
+        font-size: 2em;
+        padding: 10px;
+        margin: 20px auto;
+    }
+    h1 {
+        font-size: 5em;
+    }
+    .initialList {
+        text-align: center;
+        grid-column: 1/2;
+
+    }
+    
+    .initialList ul {
+        display: inline-block;
+        text-align: left;
+    }
+
+    #pestContainer {
+        text-align: center;
+        grid-column: 2/-1;
+    }
+
+    #pestContainer ul {
+        display: inline-block;
+        text-align: block;
+    }
+
+    .centerButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;    
+    }
+    #submitButton {
+        padding: 30px;
+        font-size: 2em;
+    }
+    #navBar ul {
+        font-size: 2em;
+        height: 4rem;
+
+    }
+    #totalCost {
+        grid-column: 1/-1;
+    }
+    input {
+        font-size: 1em;
+    }
+}
