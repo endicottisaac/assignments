@@ -89,11 +89,6 @@ main{
     margin-top: 30px;
 }
 
-.margins {
-    margin-left: 50px;
-    margin-right: 50px;
-}
-
 #section3, #section4 {
     margin-top: 30px;
 }
@@ -104,6 +99,7 @@ main{
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-top: 0px;
 
 }
 
@@ -159,12 +155,14 @@ footer {
     border-top: solid 1px #d9e3dc;
 }
 
-
-
-.resource-container {    
+#section9 {
     background-image: url(bamboo.png);
     width: 100%;
     background-color: rgba(138,188,159,0.5);
+}
+
+.resource-container {    
+    
     padding-bottom: 20px;
 
     margin-top: 0px;
@@ -176,13 +174,22 @@ footer {
     padding: 10px;
     border-top: solid 1px #a0b9ad;
 }
- @media screen and (min-width: 600px) {
+
+@media screen and (min-width: 600px) {
+    #section6 p {
+        font-size: 1em;
+    }
+}
+
+ @media screen and (min-width: 1000px) {
     #container{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(18);
     }
     header {
         grid-column: 1/-1;
+        grid-row: 1/3;
         display: grid;
         grid-template-columns: repeat(3,1fr);
     }
@@ -194,4 +201,64 @@ footer {
         height: 40px;
         /* display: flex; */
     }
+    #section3 {
+        grid-column: 1/3;
+        grid-row: 3/8;
+    }
+
+    #section8 {
+        grid-column: 3/-1;
+        grid-row: 3/8;
+        
+    }
+
+    .design-example-container {
+        display: block;
+    }
+
+    .design-example {
+        padding: 10px 50px;
+        border-top: solid 1px #d9e3dc;
+    }
+
+
+    #section4 {
+        grid-column: 1/3;
+        grid-row: 8/12;
+        margin-top: 0px;
+    }
+    #section9 {
+        grid-column: 3/-1;
+        grid-row: 8/12;
+    }
+
+    .resource-container {    
+        display: block;
+    }
+    
+    .resource-links {
+        padding: 10px 50px;
+    }
+    #section5 {
+        grid-column: 1/3;
+        grid-row: 12/16;
+    }
+    #section10 {
+        grid-column: 3/-1;
+        grid-row: 12/16;
+        background: #edf4f0;
+    }
+
+    #section6 {
+        grid-column: 1/-1;
+        grid-row: 16/18;
+    }
+    #section7 {
+        grid-column: 1/-1;
+        grid-row: 18/19;
+    }
+
   } 
+
+
+
