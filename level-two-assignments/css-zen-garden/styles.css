@@ -258,6 +258,10 @@ footer {
         grid-row: 18/19;
     }
 
+    #section6 p {
+        font-size: 1.4em;
+    }
+
   } 
 
 
