@@ -22,6 +22,23 @@ h1 {
   box-shadow: 2px 2px rgb(253, 226, 243);
 }
 
+h3 {display: inline-block;}
+
+.checkbox {
+  display: inline-block;
+  width: 20px;
+  padding: 30px;
+  margin: 20px;
+}
+
+.deleteButton {
+  display: inline-block;
+  width: 30px;
+  background-color: rgb(183, 7, 7);
+}
+
+
+
 input {
   border-radius: 5px;
   outline: none;
@@ -77,4 +94,5 @@ button:active {
 img {
   width: 100px;
   border: 2px solid black;
+  display: block;
 }
