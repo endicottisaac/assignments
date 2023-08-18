@@ -90,9 +90,8 @@ const deleteButtonInput = (deleteButtons) => {
     deleteButtons.addEventListener("click", function() {
         const deleteID = deleteButtons.name
         axios.delete("https://api.vschool.io/endicottisaac/todo/" + deleteID)
-        .then(response => console.log(response.data))
+        .then(response => getData())
         .catch(error => console.log(error))
-        getData()
     })
 }
 
@@ -107,16 +106,16 @@ const checkboxInputs = (inputs) => {
             const todoId = inputs.id
             if(inputs.checked == true) {
                 axios.put("https://api.vschool.io/endicottisaac/todo/" + todoId, completed)
-                .then(response => console.log(response.data))
+                .then(response => getData())
                 .catch(error => console.log(error))
                 
             } else if(inputs.checked == false) {
                 axios.put("https://api.vschool.io/endicottisaac/todo/" + todoId, notCompleted)
-                .then(response => console.log(response.data))
+                .then(response => getData())
                 .catch(error => console.log(error))
                 
             }
-            getData()
+            
         })
        
 }
