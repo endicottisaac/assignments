@@ -13,7 +13,6 @@ function App() {
     <>
       <Header />
       <BlogList />
-      <h1>Hello!</h1>
       <Footer />
     </>
   )
