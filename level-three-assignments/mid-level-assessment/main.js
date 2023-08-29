@@ -1,7 +1,7 @@
 //Challenge 1 (sum of two)
 
 const numbers = [2, 4, 7, 11, 15];
-const target = 9;
+const target = 11;
 const numbersTwo = [5, 12, 3, 9, 1];
 const targetTwo = 8;
 
@@ -9,7 +9,7 @@ const targetTwo = 8;
 
 function findSumOfTwo(arr, num) {
     for (let i = 0; i < arr.length; i++) { //gets a value from the array
-        for(let j = 0; j<arr.length; j++) // gets a second value from the same arr
+        for(let j = i + 1; j<arr.length; j++) // gets a second value from the same arr
         if(arr[i] + arr[j] === num) { //add the two values from both arr to check if they add to the targeted number
             return([arr[i],arr[j]]) //returns both values in an array 
         }
@@ -42,3 +42,50 @@ function countVowels(word) {
 
 console.log(countVowels(input)); // Output: 3
 console.log(countVowels(inputTwo)); // Output: 5
+
+
+// function countVowels(str) {
+//     const vowels = ['a', 'e', 'i', 'o', 'u'];
+//     const characters = str.toLowerCase().split('');
+//     let count = 0;
+  
+//     for (let i = 0; i < characters.length; i++) {
+//       if (vowels.includes(characters[i])) {
+//         count++;
+//       }
+//     }
+  
+//     return count;
+//   }
+
+
+  //Challenge: Sort Array with Preserved Index for -1 Values
+
+// You are given an array a containing integers. Your task is to implement the solution function to sort the array in ascending order, while preserving the original index positions of -1 values.
+
+// Write a function solution(a) that takes in an array a and returns a new array with the following conditions:
+
+// All non -1 values in the array should be sorted in ascending order.
+// The -1 values should retain their original index positions in the sorted array.
+
+function solution(arr){
+    if(arr.includes(-1)){
+
+        const filteredArr = arr.filter(num => num !== -1)
+        filteredArr.sort((a,b) => a -b)
+    
+        for(i = 0; i < arr.length; i++){
+            if(arr[i] !== -1){
+                arr[i] = filteredArr[0]
+                filteredArr.splice(0,1)
+            }
+        }
+    } else arr.sort((a,b) => a - b)
+
+    return arr
+}
+
+console.log(solution([-1, 150, 190, 170, -1, -1, 160, 180]))
+console.log(solution([5, 3, 1]))
+console.log(solution([-1, -1, -1, -1]))
+console.log(solution([100, -1, 50, -1, 75]))
