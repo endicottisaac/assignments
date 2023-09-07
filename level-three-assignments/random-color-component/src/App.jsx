@@ -4,7 +4,6 @@ import './App.css'
 function App() {
   const [ranColor, setRanColor] = React.useState({})
   const [count, setCount] = React.useState(1)
-  console.log(ranColor)
   React.useEffect(function () {
         fetch(`https://www.colr.org/json/color/random?timestamp=${new Date().getTime()}`)
             .then(res => res.json())
