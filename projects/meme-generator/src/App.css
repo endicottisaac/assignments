@@ -1,0 +1,37 @@
+body {
+  background-color: #F4976C;
+}
+#root {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #FBE8a6;
+  color: #303C6C;
+  border-radius: 10px;
+}
+h1 {
+  font-size: 3rem
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.form--input {
+  padding: 10px;
+  margin: 10px;
+  background-color: #B4DFE5;
+  font-size: 1.4rem
+}
+
+.form--button {
+  grid-column: 1/-1;
+  padding: 10px;
+  margin: 10px;
+  background-color: #B4DFE5;
+  color: #303C6C;
+  font-size: 1.4rem;
+  font-weight: bold;
+}

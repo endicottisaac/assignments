@@ -16,13 +16,17 @@ function App() {
   const [allBadges, setAllBadges] = React.useState([])
 
   function handleChange(event) {
+    const {name, value} = event.target
     setBadgeForm(prevBadgeForm => {
         return {
             ...prevBadgeForm,
-            [event.target.name]: event.target.value
+            name: value
         }
     })
 }
+
+console.log(badgeForm)
+
   function handleSubmit(event) {
     event.preventDefault()
     setAllBadges(prevBadge => [...prevBadge, badgeForm])
@@ -48,6 +52,7 @@ function App() {
             name='fName'
             onChange={handleChange}
             value={badgeForm.fName}
+            minLength={3}
           />
           <input
             required
