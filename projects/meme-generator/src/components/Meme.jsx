@@ -63,6 +63,14 @@ export default function Meme() {
             randomImage: "http://i.imgflip.com/1bij.jpg"  
         })
     }
+    //deletes the meme from memeList using an index parameter to target the specified meme and then using .splice to remove it 
+    function deleteMeme(index) {
+        setMemeList(prevMemes => {
+            const updatedList = [...prevMemes];
+            updatedList.splice(index, 1);
+            return updatedList
+        })
+    }
 
    //maps over the memeList and adds each meme to webpage 
     const savedMemes = memeList.map((item, index) => {
@@ -70,6 +78,7 @@ export default function Meme() {
             memeImg={item.memeImg} 
             topText={item.topText} 
             bottomText={item.bottomText}
+            onDelete={() => deleteMeme(index)}
             key={index}
         />
     })
