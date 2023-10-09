@@ -1,17 +1,19 @@
 body {
-  background-color: #F4976C;
+  background-color: #000;
 }
 #root {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: #FBE8a6;
-  color: #303C6C;
+  background-color: #4F4F50;
+  color: #467061;
   border-radius: 10px;
 }
 h1 {
-  font-size: 3rem
+  font-size: 3rem;
+  font-weight: 1000000;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .form {
@@ -22,16 +24,98 @@ h1 {
 .form--input {
   padding: 10px;
   margin: 10px;
-  background-color: #B4DFE5;
+  background-color: #003E29;
   font-size: 1.4rem
 }
+
 
 .form--button {
   grid-column: 1/-1;
   padding: 10px;
   margin: 10px;
-  background-color: #B4DFE5;
-  color: #303C6C;
+  background-color: #003E29;
+  color: #467061;
   font-size: 1.4rem;
   font-weight: bold;
 }
+
+.meme {
+  position: relative;
+}
+
+.meme--image {
+  max-width: 100%;
+  border-radius: 3px;
+  margin-top: 20px;
+}
+
+.meme--text {
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: sans-serif;
+  font-size: 32px;
+  color: white;
+  text-shadow: 0 0 3px #000, 0 0 5px #000; 
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.top {
+  top: 0;
+}
+
+.save--button {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #003E29;
+  color: #467061;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 10px; 
+}
+
+.saved-meme {
+  position: relative;
+  margin-bottom: 20px; 
+}
+
+.top--text {
+  position: absolute;
+  top: 5px; 
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: sans-serif;
+  font-size: 32px;
+  color: white;
+  text-shadow: 0 0 3px #000, 0 0 5px #000;
+}
+
+.bottom--text {
+  position: absolute;
+  bottom: 5px; 
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: sans-serif;
+  font-size: 32px;
+  color: white;
+  text-shadow: 0 0 3px #000, 0 0 5px #000;
+}
+
+.memes--list {
+  margin-top: 20px;
+  border-top: #000 solid 3px;
+}
+
+.memes--list > img {
+  max-width: 600;
+}
+
+
+
+
