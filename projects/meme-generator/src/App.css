@@ -16,7 +16,6 @@ h1 {
 
 header {
   background-color: #5FD068;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,6 +26,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 20px;
+  margin: 40px;
 }
 
 .form--input {

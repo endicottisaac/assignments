@@ -72,6 +72,10 @@ export default function Meme() {
         })
     }
 
+    function editMeme(memeIndex, update){
+        setMemeList(prevList => prevList.map((meme, index) => index !== memeIndex ? meme : update))
+    }
+
    //maps over the memeList and adds each meme to webpage 
     const savedMemes = memeList.map((item, index) => {
         return <SavedMeme
@@ -80,6 +84,8 @@ export default function Meme() {
             bottomText={item.bottomText}
             onDelete={() => deleteMeme(index)}
             key={index}
+            editMeme={editMeme}
+            index={index}
         />
     })
 
