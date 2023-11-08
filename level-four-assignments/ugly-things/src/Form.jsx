@@ -1,13 +1,47 @@
-import React from "react";
+import React, { useContext } from "react";
+import { PageContext } from "./pageContext";
+
 
 function Form(){
+
+    const {handleChange} = useContext(PageContext)
+
+    const {thing} = useContext(PageContext)
+
+    const {submitThing} = useContext(PageContext)
+
+    
     return (
-        <form>
-            <input placeholder="Title"></input>
-            <input placeholder="Img URL"></input>
-            <input placeholder="Description"></input>
-            <button>Submit</button>
-        </form>
+        <div>
+            <input 
+            placeholder="Title"
+            type="text"
+            className="form-input"
+            name="title"
+            value={thing.title}
+            onChange={handleChange}
+            required
+            />
+            <input 
+            placeholder="Img URL"
+            type="text"
+            className="form-input"
+            name="imgUrl"
+            value={thing.imgUrl}
+            onChange={handleChange}
+            required
+            />
+            <input 
+            placeholder="Description"
+            type="text"
+            className="form-input"
+            name="description"
+            value={thing.description}
+            onChange={handleChange}
+            required
+            />
+            <button onClick={submitThing}>Submit</button>
+        </div>
     )
 }
 
