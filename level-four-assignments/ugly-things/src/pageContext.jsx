@@ -11,6 +11,12 @@ function PageContextProvider(props){
         imgUrl: ""
     })
 
+    const [edit, setEdit] = useState({
+        title: "New Title",
+        description: "New Description",
+        imgUrl: "New Img Url"
+    });
+
     const [allUglyThings, setAllUglyThings] = useState([])
 
     const [formSubmitted, setFormSubmitted] = useState(false);
@@ -48,6 +54,30 @@ function PageContextProvider(props){
 
     }
 
+    const onDelete = (id) => {
+        axios.delete(`https://api.vschool.io/isaacendicott/thing/${id}` )
+        .then(res => {
+            console.log(res)
+            setFormSubmitted(true)
+            
+        })
+        .catch(err => {
+                console.log(err)
+        })
+    }
+
+    const editThing = (id, edit) => {
+        setEdit(edit);
+        axios.put(`https://api.vschool.io/isaacendicott/thing/${id}`, edit)
+            .then(res => {
+                console.log(res);
+                setFormSubmitted(true);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
+
     useEffect(() => {
         axios.get("https://api.vschool.io/isaacendicott/thing")
         .then(response => {
@@ -65,7 +95,10 @@ function PageContextProvider(props){
             handleChange: handleChange,
             thing: thing,
             submitThing: submitThing,
-            allUglyThings: allUglyThings
+            allUglyThings: allUglyThings,
+            onDelete: onDelete,
+            editThing: editThing,
+            edit: edit
         }}>
             {props.children}
         </PageContext.Provider>

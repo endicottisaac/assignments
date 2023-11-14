@@ -12,7 +12,8 @@ function Form(){
 
     
     return (
-        <div>
+        <div className="submit--form">
+            <div className="submit--form--inputs">
             <input 
             placeholder="Title"
             type="text"
@@ -40,7 +41,8 @@ function Form(){
             onChange={handleChange}
             required
             />
-            <button onClick={submitThing}>Submit</button>
+            </div>
+            <button className="new--submit--button" onClick={submitThing}>Submit</button>
         </div>
     )
 }
