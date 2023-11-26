@@ -9,7 +9,15 @@ export default function UglyThing(props){
         setToggle(prev => !prev)
     }
 
-    const [edit, setEdit] = useState(props.edit);
+
+        const [edit, setEdit] = useState({
+            title: props.title,
+            description: props.description,
+            imgUrl: props.imgUrl
+        });
+
+
+    console.log(edit)
 
     const handleChange = (e) => {
         const {name, value} = e.target
