@@ -15,7 +15,6 @@ const TriviaContextProvider = (props) =>{
         question: "",
         correct_answer: ""
     })
-    const [trueOrFalseRequest, setTrueOrFalseRequest] = useState(false)
 
     const [customRequest, setCustomRequest] = useState({
         category: "any",
@@ -54,10 +53,6 @@ const TriviaContextProvider = (props) =>{
 
       //True or false function and useEffect 
       const newTrueOrFalse = () => {
-        setTrueOrFalseRequest(true)
-      }
-
-      useEffect(() => {
         const apiUrl = 'https://opentdb.com/api.php?amount=1&type=boolean'
 
         axios.get(apiUrl) 
@@ -73,7 +68,7 @@ const TriviaContextProvider = (props) =>{
                 }))
                 setTrueOrFalseRequest(false)
             })
-      }, [trueOrFalseRequest])
+      }
 
 
       //Custom Trivia functions and useEffect 
