@@ -1,7 +1,10 @@
-import React, {useState} from "react";
+import React, {useState, useContext, useEffect} from "react";
+import { TriviaContext } from "../triviacontext";
 
 
 export default function TriviaCustom(props){
+
+    const {customTrivia} = useContext(TriviaContext)
 
     const [answerClass, setAnswerClass] = useState("hidden")
 
@@ -9,6 +12,9 @@ export default function TriviaCustom(props){
         setAnswerClass(prevClass => prevClass === "hidden" ? "revealed" : "hidden")
     }
 
+    useEffect(() => {
+        setAnswerClass("hidden")
+    }, [customTrivia])
     return(
         <>
             <div>
