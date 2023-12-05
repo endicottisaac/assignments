@@ -1,0 +1,65 @@
+{
+    "appetizers": [
+        {
+            "name": "Caprese Skewers",
+            "ingredients": ["mozzarella", "cherry tomatoes", "basil", "balsamic glaze"],
+            "description": "Caprese Skewers are fresh, colorful, and tangy cheese skewers perfect for the summer!"
+        },
+        {
+            "name": "Bacon Wrapped Brussels Sprouts",
+            "ingredients": ["bacon strips", "brussels sprouts", "maple syrup", "black pepper"], 
+            "description": "Crisp bacon wrapped around tender brussels sprouts, and a maple glaze slathered on top, these are delicious!"
+        }
+        
+    ],
+    "coldSandwiches": [
+        {
+            "name": "Muffuletta",
+            "ingredients": ["Italian bread", "salami", "ham", "mortadella", "swiss cheese", "provolone cheese", "olives", "capers"],
+            "description": "The classic New Orleans sandwich combines a homemade olive salad with layers of thin-sliced Italian cold cuts" 
+        },
+        {
+            "name": "Turkey Guacamole Wraps",
+            "ingredients": ["avacado", "mayonaise", "lime juice", "minced garlic", "hot sauce", "tortillas", "turkey", "onion", "lettuce"],
+            "description": "Tuck smoked turkey and a creamy avocado spread into tortilla wraps and add a dash of hot sauce for a little heat." 
+        }
+    ],
+    "hotSandwiches": [
+       {
+            "name": "Mac & Cheese Pork Sliders",
+            "ingredients": ["Mac & Cheese", "Sweet Rolls", "Barbecue shredded pork", "homemade barbecue sauce"],
+            "description": "These sliders bring a cookeout feel with its sweet and savory flavor and a kick from the homemade barbecue sauce"
+       },
+       {
+            "name": "Cuban",
+            "ingredients": ["cuban sandwich loaf", "mustard", "honey glazed ham", "dill pickles", "roast pork", "swiss cheese"],
+            "description": "The mighty Cubano is a pressed sandwich with a combination of roast pork and ham, topped with cheese and all the necessary fixings"
+       } 
+    ],
+    "desserts": [
+        {
+            "name": "Rice Krispie Treats",
+            "ingredients": ["marshmallows", "butter", "vanilla", "rice krispies"], 
+            "description": "Classic treat that combines cereal and marshmallows to make something sweet, sticky, and delicious"
+        },
+        {
+            "name": "Oatmeal Cookies",
+            "ingredients": ["oats", "flour", "baking powder", "cinnamon", "butter", "sugar", "eggs", "vanilla", "raisins"], 
+            "description": "Soft chewy and delicious delicous oatmeal cookies"
+        }
+    ],
+    "drinks": [
+        {
+            "name": "Sweet Tea", 
+            "ingredients": ["black tea leaves", "sugar"], 
+            "description": "Sweet, cold, refreshing Ice Tea"
+        }, 
+        {
+            "name": "Lemonade",
+            "ingredients": ["lemon juice", "sugar", "water"],
+            "description": "Sweet, sour, and refreshing Lemonade"
+        }
+    ]
+
+
+}

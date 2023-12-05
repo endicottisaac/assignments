@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+}
+
+.friendContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px;
+}
+
+h1 {
+  text-align: center;
+}
