@@ -1,5 +1,6 @@
 const express = require("express")
 const bountyRouter = require("./routes/bountyRouter")
+
 const app = express()
 
 app.use(express.json())
