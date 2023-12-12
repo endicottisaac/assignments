@@ -10,7 +10,7 @@ const bounties = [
     { fname: "Yoda", lname: "", living: true, bounty: 1200000000, type: "Jedi", _id: uuidv4() },
     { fname: "Count", lname: "Dooku", living: true, bounty: 900000000, type: "Sith", _id: uuidv4() },
     { fname: "Anakin", lname: "Skywalker", living: true, bounty: 1800000000, type: "Sith", _id: uuidv4() },
-    { fname: "Mace", lname: "Windu", living: true, bounty: 950000000, type: "Jedi", _id: uuidv4() },
+    { fname: "Mace", lname: "Windu", living: false, bounty: 950000000, type: "Jedi", _id: uuidv4() },
     { fname: "Kylo", lname: "Ren", living: true, bounty: 1200000000, type: "Sith", _id: uuidv4() },
     { fname: "Ahsoka", lname: "Tano", living: true, bounty: 750000000, type: "Jedi", _id: uuidv4() }
 ]
