@@ -8,7 +8,7 @@ import Form from './components/Form'
 function App() {
 
   useEffect(() => {
-    axios.get("/bounty") // Remove "/api" prefix
+    axios.get("/bounty") 
       .then(res => console.log(res.data))
       .catch(err => console.log(err))
   }, []);
