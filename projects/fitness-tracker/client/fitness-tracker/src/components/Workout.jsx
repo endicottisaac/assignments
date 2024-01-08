@@ -36,10 +36,15 @@ const Workout = (props) => {
             {
                 toggle ? 
                     <div>
-                        <h3>Exercise: {props.exercise}</h3>
-                        <h4>Sets: {props.sets}</h4>
-                        <h4>Reps: {props.reps}</h4>
+                        <div>
+                            <h3>Exercise: {props.exercise}</h3>
+                            <h4>Sets: {props.sets}</h4>
+                            <h4>Reps: {props.reps}</h4>
+                        </div>
+                        <button onClick={handleToggle}>Edit</button>
+                        <button onClick={() => props.onDelete(props.id)}>Delete </button>
                     </div>
+                    
                     :
                     <form onSubmit={handleSubmit}> 
                         <h3>Exercise: {props.exercise}</h3>
