@@ -48,20 +48,23 @@ const Workout = (props) => {
                     :
                     <form onSubmit={handleSubmit}> 
                         <h3>Exercise: {props.exercise}</h3>
-                        <h4>Sets: {props.sets}</h4>z
+                        <h4>Sets: {props.sets}</h4>
                         <h4>Reps: {props.reps}</h4>
                         <div>
                             <input
                                 name="exercise"
                                 value={edit.exercise}
+                                onChange={handleChange}
                             />
                             <input
                                 name="sets"
                                 value={edit.sets}
+                                onChange={handleChange}
                             />
                             <input
                                 name="reps"
                                 value={edit.reps}
+                                onChange={handleChange}
                             />
                             <button type="submit">Save</button>
                             <button onClick={handleToggle}>Cancel</button>
